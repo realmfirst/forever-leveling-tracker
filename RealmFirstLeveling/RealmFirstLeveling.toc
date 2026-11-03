@@ -1,0 +1,11 @@
+## Interface: 16001
+## Title: Realm First Leveling Tracker
+## Notes: XP per hour, time to level, rested XP, time on this level and a session summary for WoW Forever.
+## Author: Realm First News Desk
+## Version: 1.0.0
+## SavedVariables: RealmFirstLevelingDB
+## X-Website: https://realmfirst.net/world-of-warcraft-forever/
+## X-License: MIT
+
+Calc.lua
+RealmFirstLeveling.lua

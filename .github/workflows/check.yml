@@ -1,0 +1,19 @@
+name: check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lua:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Lua 5.1
+        run: sudo apt-get update && sudo apt-get install -y lua5.1
+      - name: Syntax check
+        run: for f in RealmFirstLeveling/*.lua tests/*.lua; do luac5.1 -p "$f"; done
+      - name: Unit tests
+        run: lua5.1 tests/calc_test.lua
+      - name: Smoke test with mocked API
+        run: lua5.1 tests/smoke_test.lua
